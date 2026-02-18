@@ -1,0 +1,105 @@
+:root {
+    --color-primary: #2C5F7A;      /* Duboka plava — boja reke */
+    --color-primary-light: #4A8FA8; /* Svetlija plava — hover stanja */
+    --color-accent: #C9A84C;       /* Zlatna — luksuzni detalji */
+    --color-bg: #FAFAF8;           /* Skoro bela — toplija od pure white */
+    --color-surface: #FFFFFF;      /* Čista bela — kartice, forme */
+    --color-text-primary: #1A1A2E; /* Skoro crna — glavni tekst */
+    --color-text-secondary: #6B7280; /* Siva — opisi, podnaslovni tekst */
+    --color-border: #E8E4DC;       /* Topla siva — linije, borderi */
+
+    --font-heading: 'Playfair Display', Georgia, serif; /* Elegantni serif za naslove */
+    --font-body: 'Inter', system-ui, sans-serif;        /* Čitljiv sans-serif za tekst */
+
+    --space-xs: 0.5rem;   /*  8px */
+    --space-sm: 1rem;     /* 16px */
+    --space-md: 1.5rem;   /* 24px */
+    --space-lg: 2rem;     /* 32px */
+    --space-xl: 3rem;     /* 48px */
+    --space-2xl: 5rem;    /* 80px */
+
+    --container-max: 1200px;
+    --border-radius: 12px;
+    --border-radius-sm: 6px;
+
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+    --shadow-md: 0 8px 32px rgba(0,0,0,0.10);
+    --shadow-lg: 0 24px 64px rgba(0,0,0,0.14);
+
+    --transition-fast: 150ms ease;
+    --transition-base: 300ms ease;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box; /* Padding ne povećava element — UVIJEK ovo! */
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Animirani scroll na anchor linkove */
+    font-size: 16px;         /* Base za rem jedinice */
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    line-height: 1.6; /* Zlatno pravilo čitljivosti */
+    -webkit-font-smoothing: antialiased; /* Glatkiji tekst na Mac/iOS */
+}
+
+img {
+    max-width: 100%;  /* Slike se nikad ne prelijevaju iz kontejnera */
+    display: block;   /* Uklanja gap ispod inline slika */
+    height: auto;
+}
+
+/* Kontejner koji centrira sadržaj */
+.container {
+    width: 100%;
+    max-width: var(--container-max);
+    margin-inline: auto;   /* Moderan način za margin: 0 auto */
+    padding-inline: var(--space-sm); /* Uvek padding na mobilnom! */
+}
+
+/* Dugmad */
+.btn {
+    display: inline-block;
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--border-radius-sm);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all var(--transition-base);
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-light);
+    transform: translateY(-2px); /* Lagano "podizanje" na hover */
+    box-shadow: var(--shadow-md);
+}
+
+/* Naslovi sekcija — koristiće se svuda */
+.section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 4vw, 2.8rem); /* Responzivna tipografija bez media query! */
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-md);
+}
+
+.section-subtitle {
+    font-size: 1.05rem;
+    color: var(--color-text-secondary);
+    max-width: 55ch; /* ch jedinica = širina karaktera. 55-65ch = idealno za čitanje */
+    margin-bottom: var(--space-xl);
+}
