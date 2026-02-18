@@ -89,10 +89,9 @@ img {
     box-shadow: var(--shadow-md);
 }
 
-/* Naslovi sekcija — koristiće se svuda */
 .section-title {
     font-family: var(--font-heading);
-    font-size: clamp(1.8rem, 4vw, 2.8rem); /* Responzivna tipografija bez media query! */
+    font-size: clamp(1.8rem, 4vw, 2.8rem); 
     color: var(--color-text-primary);
     margin-bottom: var(--space-md);
 }
@@ -100,6 +99,186 @@ img {
 .section-subtitle {
     font-size: 1.05rem;
     color: var(--color-text-secondary);
-    max-width: 55ch; /* ch jedinica = širina karaktera. 55-65ch = idealno za čitanje */
+    max-width: 55ch; 
+    margin-bottom: var(--space-xl);
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  padding: var(--space-sm);
+  background-color: transparent;
+  transition: background-color var(--transition-base),
+              box-shadow var(--transition-base);
+}
+
+.navbar.scrolled {
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-sm);
+}
+
+.nav-logo {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  transition: color var(--transition-base);
+  line-height: 1.2;
+}
+
+.nav-logo span {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+  font-family: var(--font-body);
+  text-transform: uppercase;
+}
+
+.navbar.scrolled .nav-logo {
+  color: var(--color-text-primary);
+}
+
+.nav-links {
+  display: none;
+  list-style: none;
+}
+
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--space-xs);
+}
+
+.nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all var(--transition-base);
+}
+
+.navbar.scrolled .nav-toggle span {
+    background-color: var(--color-text-primary);
+}
+
+.nav-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    position: fixed;
+    inset: 0;            
+    background-color: var(--color-surface);
+    justify-content: center;
+    z-index: 999;
+}
+
+.nav-links a {
+    font-size: 1.5rem;
+    font-family: var(--font-heading);
+    color: var(--color-text-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.nav-links a:hover {
+    color: var(--color-primary);
+}
+
+@media (min-width: 768px) {
+    .nav-toggle {
+        display: none; 
+    }
+
+    .nav-links {
+        display: flex;          
+        flex-direction: row;
+        gap: var(--space-lg);
+        position: static;       
+        background: none;
+        inset: auto;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+        font-family: var(--font-body);
+        font-weight: 500;
+        color: white;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+    }
+
+    .navbar.scrolled .nav-links a {
+        color: var(--color-text-primary);
+    }
+
+    .nav-links a:hover {
+        color: var(--color-accent);
+    }
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-image: url('../images/rijeka.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(0, 0, 0, 0.5) 100%
+    );
+}
+
+.hero-content {
+    position: relative;     
+    z-index: 1;
+    text-align: center;
+    padding: var(--space-sm);
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    color: white;
+    line-height: 1.1;
+    margin-bottom: var(--space-md);
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 55ch;
+    margin-inline: auto;
     margin-bottom: var(--space-xl);
 }
