@@ -282,3 +282,71 @@ img {
     margin-inline: auto;
     margin-bottom: var(--space-xl);
 }
+
+.about {
+    padding: var(--space-2xl) 0;
+    background-color: var(--color-surface);
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-xl);
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--space-sm);
+}
+
+.about-text {
+    flex: 1;  
+}
+
+.about-text h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    margin-bottom: var(--space-md);
+    color: var(--color-text-primary);
+}
+
+.about-text h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-accent);
+    margin-top: var(--space-xs);
+}
+
+.about-text p {
+    color: var(--color-text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    max-width: 50ch;
+}
+
+.about-image {
+    flex: 1;  
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.about-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;  
+    transition: transform 0.6s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.03); 
+}
+
+.about-image figcaption {
+    padding: var(--space-xs) var(--space-sm);
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    text-align: center;
+    font-style: italic;
+}
