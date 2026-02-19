@@ -129,53 +129,69 @@
       <div class="container">
         <h2 class="section-title">Galerija</h2>
         <p class="section-subtitle">Pogledajte svaki kutak apartmana.</p>
+
+        <!-- TABOVI -->
+        <div class="gallery-tabs">
+          <button class="gallery-tab active" data-filter="sve">Sve</button>
+          <button class="gallery-tab" data-filter="vanjski">Vanjski prostori</button>
+          <button class="gallery-tab" data-filter="dnevni">Dnevni boravak</button>
+          <button class="gallery-tab" data-filter="sobe">Sobe</button>
+          <button class="gallery-tab" data-filter="kuhinja">Kuhinja & Trpezarija</button>
+          <button class="gallery-tab" data-filter="kupatilo">Kupatilo & Hodnik</button>
+        </div>
+
         <div class="gallery-grid">
-          <!-- VELIKE slike — zauzimaju 2 kolone/reda -->
-          <figure class="gallery-item gallery-item--wide">
-            <img src="images/pogled-na-rijeku.jpg" alt="Pogled na rijeku Trebišnjicu" loading="lazy">
+          <!-- VANJSKI PROSTORI -->
+          <figure class="gallery-item" data-category="vanjski"><img src="images/rijeka.jpg" alt="Rijeka Trebišnjica"
+              loading="lazy"></figure>
+          <figure class="gallery-item" data-category="vanjski"><img src="images/pogled-na-rijeku.jpg"
+              alt="Pogled na rijeku" loading="lazy"></figure>
+          <figure class="gallery-item" data-category="vanjski"><img src="images/pogled-sa-balkona.jpg"
+              alt="Pogled sa balkona" loading="lazy"></figure>
+          <figure class="gallery-item" data-category="vanjski"><img src="images/pogled-ispred-zgrade-na-rijeku.jpg"
+              alt="Pogled ispred zgrade" loading="lazy"></figure>
+          <figure class="gallery-item" data-category="vanjski"><img src="images/pogled-ispred-zgrade2.jpg"
+              alt="Pogled ispred zgrade 2" loading="lazy"></figure>
+          <figure class="gallery-item" data-category="vanjski"><img src="images/balkon.jpg" alt="Balkon" loading="lazy">
           </figure>
+          <figure class="gallery-item" data-category="vanjski"><img src="images/balkon2.jpg" alt="Balkon 2"
+              loading="lazy"></figure>
+          <figure class="gallery-item" data-category="vanjski"><img src="images/balkon3.jpg" alt="Balkon 3"
+              loading="lazy"></figure>
 
-          <!-- SREDNJE slike -->
-          <figure class="gallery-item">
-            <img src="images/dnevna-soba.jpg" alt="Dnevna soba" loading="lazy">
-          </figure>
+          <!-- DNEVNI BORAVAK -->
+          <figure class="gallery-item" data-category="dnevni"><img src="images/dnevna-soba.jpg" alt="Dnevna soba"
+              loading="lazy"></figure>
+          <figure class="gallery-item" data-category="dnevni"><img src="images/dnevna-soba2.jpg" alt="Dnevna soba 2"
+              loading="lazy"></figure>
+          <figure class="gallery-item" data-category="dnevni"><img src="images/enterijer.jpg" alt="Enterijer"
+              loading="lazy"></figure>
 
-          <figure class="gallery-item">
-            <img src="images/velika-spavaca-soba.jpg" alt="Velika spavaća soba" loading="lazy">
-          </figure>
+          <!-- SOBE -->
+          <figure class="gallery-item" data-category="sobe"><img src="images/velika-spavaca-soba.jpg"
+              alt="Velika spavaća soba" loading="lazy"></figure>
+          <figure class="gallery-item" data-category="sobe"><img src="images/velika-spavaca-soba2.jpg"
+              alt="Velika spavaća soba 2" loading="lazy"></figure>
+          <figure class="gallery-item" data-category="sobe"><img src="images/mala-spavaca-soba.jpg"
+              alt="Mala spavaća soba" loading="lazy"></figure>
+          <figure class="gallery-item" data-category="sobe"><img src="images/mala-spavaca-soba2.jpg"
+              alt="Mala spavaća soba 2" loading="lazy"></figure>
 
-          <!-- MALE slike -->
-          <figure class="gallery-item">
-            <img src="images/kuhinja.jpg" alt="Kuhinja" loading="lazy">
-          </figure>
+          <!-- KUHINJA & TRPEZARIJA -->
+          <figure class="gallery-item" data-category="kuhinja"><img src="images/kuhinja.jpg" alt="Kuhinja"
+              loading="lazy"></figure>
+          <figure class="gallery-item" data-category="kuhinja"><img src="images/trpezarija.jpg" alt="Trpezarija"
+              loading="lazy"></figure>
+          <figure class="gallery-item" data-category="kuhinja"><img src="images/trpezarija2.jpg" alt="Trpezarija 2"
+              loading="lazy"></figure>
 
-          <figure class="gallery-item">
-            <img src="images/WC.jpg" alt="Kupatilo" loading="lazy">
+          <!-- KUPATILO & HODNIK -->
+          <figure class="gallery-item" data-category="kupatilo"><img src="images/WC.jpg" alt="Kupatilo" loading="lazy">
           </figure>
-
-          <figure class="gallery-item">
-            <img src="images/balkon2.jpg" alt="Balkon 2" loading="lazy">
-          </figure>
-
-          <figure class="gallery-item">
-            <img src="images/trpezarija.jpg" alt="Trpezarija" loading="lazy">
-          </figure>
-
-          <figure class="gallery-item">
-            <img src="images/mala-spavaca-soba.jpg" alt="Mala spavaća soba" loading="lazy">
-          </figure>
-
-          <figure class="gallery-item">
-            <img src="images/balkon3.jpg" alt="Balkon 3" loading="lazy">
-          </figure>
-
-          <figure class="gallery-item">
-            <img src="images/velika-spavaca-soba2.jpg" alt="Spavaća soba 2" loading="lazy">
-          </figure>
-
-          <figure class="gallery-item">
-            <img src="images/dnevna-soba2.jpg" alt="Dnevna soba 2" loading="lazy">
-          </figure>
+          <figure class="gallery-item" data-category="kupatilo"><img src="images/hodnik1.jpg" alt="Hodnik"
+              loading="lazy"></figure>
+          <figure class="gallery-item" data-category="kupatilo"><img src="images/hodnik2.jpg" alt="Hodnik 2"
+              loading="lazy"></figure>
         </div>
       </div>
     </section>

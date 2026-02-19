@@ -104,3 +104,28 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowRight') navigate(1);
   if (e.key === 'Escape') closeLightbox();
 });
+
+// ================================
+// GALERIJA TABOVI
+// ================================
+const tabs = document.querySelectorAll('.gallery-tab');
+const galleryItems = document.querySelectorAll('.gallery-item');
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    // Ukloni active sa svih tabova
+    tabs.forEach(t => t.classList.remove('active'));
+    // Dodaj active na kliknuti tab
+    tab.classList.add('active');
+
+    const filter = tab.dataset.filter;
+
+    galleryItems.forEach(item => {
+      if (filter === 'sve' || item.dataset.category === filter) {
+        item.classList.remove('hidden');
+      } else {
+        item.classList.add('hidden');
+      }
+    });
+  });
+});
