@@ -181,20 +181,98 @@
     </section>
 
     <section class="contact" id="contact">
-      <h2>Rezervišite vaš boravak</h2>
-      <div class="contact-wrapper">
-        <form class="contact-form" novalidate>
-        </form>
-        <div class="map-container">
+      <div class="container">
+        <h2 class="section-title">Rezervišite vaš boravak</h2>
+        <p class="section-subtitle">Pošaljite upit i odgovorićemo u najkraćem roku.</p>
+        <div class="contact-wrapper">
+
+          <form class="contact-form" novalidate>
+            <div class="form-group">
+              <label for="name">Ime i prezime</label>
+              <input type="text" id="name" name="name" placeholder="Vaše ime" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email adresa</label>
+              <input type="email" id="email" name="email" placeholder="vas@email.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="dates">Datum dolaska i odlaska</label>
+              <input type="text" id="dates" name="dates" placeholder="npr. 15.07 — 22.07.2025">
+            </div>
+
+            <div class="form-group">
+              <label for="guests">Broj gostiju</label>
+              <select id="guests" name="guests">
+                <option value="1">1 gost</option>
+                <option value="2" selected>2 gosta</option>
+                <option value="3">3 gosta</option>
+                <option value="4">4 gosta</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Poruka (opciono)</label>
+              <textarea id="message" name="message" rows="4" placeholder="Dodatna pitanja ili napomene..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Pošalji upit</button>
+          </form>
+
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d318.85817236563844!2d18.349454297032587!3d42.70829727908467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2srs!4v1771512947052!5m2!1sen!2srs"
+              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
 
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Trebišnjica Riverside Apartment. Sva prava zadržana.</p>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            Trebišnjica<span>Riverside</span>
+          </a>
+          <p>Apartman na obali Trebišnjice,<br>u srcu starog Trebinja.</p>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Kontakt</h4>
+          <a href="tel:+38765818139">+387 65 818 139</a>
+          <a href="mailto:trebisnjica.riverside@gmail.com">trebisnjica.riverside@gmail.com</a>
+        </div>
+
+        <div class="footer-links">
+          <h4>Rezervacije</h4>
+          <a href="#contact">Pošalji upit</a>
+          <a href="#" class="booking-link">Booking.com</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Trebišnjica Riverside Apartment. Sva prava zadržana.</p>
+      </div>
+    </div>
   </footer>
+
+  <div class="lightbox-overlay" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <div class="lightbox-content">
+      <img src="" alt="" id="lightboxImg">
+    </div>
+    <button class="lightbox-prev" id="lightboxPrev">&#8592;</button>
+    <button class="lightbox-next" id="lightboxNext">&#8594;</button>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+  </div>
 
   <script src="js/script.js"></script>
 </body>

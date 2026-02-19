@@ -1,22 +1,22 @@
 :root {
-    --color-primary: #2C5F7A;      /* Duboka plava — boja reke */
-    --color-primary-light: #4A8FA8; /* Svetlija plava — hover stanja */
-    --color-accent: #C9A84C;       /* Zlatna — luksuzni detalji */
-    --color-bg: #FAFAF8;           /* Skoro bela — toplija od pure white */
-    --color-surface: #FFFFFF;      /* Čista bela — kartice, forme */
-    --color-text-primary: #1A1A2E; /* Skoro crna — glavni tekst */
-    --color-text-secondary: #6B7280; /* Siva — opisi, podnaslovni tekst */
-    --color-border: #E8E4DC;       /* Topla siva — linije, borderi */
+    --color-primary: #2C5F7A;
+    --color-primary-light: #4A8FA8;
+    --color-accent: #C9A84C;
+    --color-bg: #FAFAF8;
+    --color-surface: #FFFFFF;
+    --color-text-primary: #1A1A2E;
+    --color-text-secondary: #6B7280;
+    --color-border: #E8E4DC;
 
-    --font-heading: 'Playfair Display', Georgia, serif; /* Elegantni serif za naslove */
-    --font-body: 'Inter', system-ui, sans-serif;        /* Čitljiv sans-serif za tekst */
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'Inter', system-ui, sans-serif;
 
-    --space-xs: 0.5rem;   /*  8px */
-    --space-sm: 1rem;     /* 16px */
-    --space-md: 1.5rem;   /* 24px */
-    --space-lg: 2rem;     /* 32px */
-    --space-xl: 3rem;     /* 48px */
-    --space-2xl: 5rem;    /* 80px */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --space-2xl: 5rem;
 
     --container-max: 1200px;
     --border-radius: 12px;
@@ -31,39 +31,40 @@
 }
 
 *, *::before, *::after {
-    box-sizing: border-box; /* Padding ne povećava element — UVIJEK ovo! */
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 html {
-    scroll-behavior: smooth; /* Animirani scroll na anchor linkove */
-    font-size: 16px;         /* Base za rem jedinice */
+    scroll-behavior: smooth;
+    font-size: 16px;
 }
 
 body {
     font-family: var(--font-body);
     background-color: var(--color-bg);
     color: var(--color-text-primary);
-    line-height: 1.6; /* Zlatno pravilo čitljivosti */
-    -webkit-font-smoothing: antialiased; /* Glatkiji tekst na Mac/iOS */
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
 }
 
 img {
-    max-width: 100%;  /* Slike se nikad ne prelijevaju iz kontejnera */
-    display: block;   /* Uklanja gap ispod inline slika */
+    max-width: 100%;
+    display: block;
     height: auto;
 }
 
-/* Kontejner koji centrira sadržaj */
+/* ================================
+   UTILITY
+================================ */
 .container {
     width: 100%;
     max-width: var(--container-max);
-    margin-inline: auto;   /* Moderan način za margin: 0 auto */
-    padding-inline: var(--space-sm); /* Uvek padding na mobilnom! */
+    margin-inline: auto;
+    padding-inline: var(--space-sm);
 }
 
-/* Dugmad */
 .btn {
     display: inline-block;
     padding: var(--space-xs) var(--space-md);
@@ -85,13 +86,13 @@ img {
 
 .btn-primary:hover {
     background-color: var(--color-primary-light);
-    transform: translateY(-2px); /* Lagano "podizanje" na hover */
+    transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
 
 .section-title {
     font-family: var(--font-heading);
-    font-size: clamp(1.8rem, 4vw, 2.8rem); 
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
     color: var(--color-text-primary);
     margin-bottom: var(--space-md);
 }
@@ -99,70 +100,73 @@ img {
 .section-subtitle {
     font-size: 1.05rem;
     color: var(--color-text-secondary);
-    max-width: 55ch; 
+    max-width: 55ch;
     margin-bottom: var(--space-xl);
 }
 
+/* ================================
+   NAVBAR
+================================ */
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 999;
-  padding: var(--space-sm);
-  background-color: transparent;
-  transition: background-color var(--transition-base),
-              box-shadow var(--transition-base);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    padding: var(--space-sm);
+    background-color: transparent;
+    transition: background-color var(--transition-base),
+                box-shadow var(--transition-base);
 }
 
 .navbar.scrolled {
-  background-color: var(--color-surface);
-  box-shadow: var(--shadow-sm);
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-sm);
 }
 
 .nav-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: var(--container-max);
-  margin-inline: auto;
-  padding-inline: var(--space-sm);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--space-sm);
 }
 
 .nav-logo {
-  font-family: var(--font-heading);
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: white;
-  text-decoration: none;
-  transition: color var(--transition-base);
-  line-height: 1.2;
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    transition: color var(--transition-base);
+    line-height: 1.2;
 }
 
 .nav-logo span {
-  display: block;
-  font-size: 0.75rem;
-  font-weight: 400;
-  letter-spacing: 0.15em;
-  color: var(--color-accent);
-  font-family: var(--font-body);
-  text-transform: uppercase;
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    color: var(--color-accent);
+    font-family: var(--font-body);
+    text-transform: uppercase;
 }
 
 .navbar.scrolled .nav-logo {
-  color: var(--color-text-primary);
+    color: var(--color-text-primary);
 }
 
 .nav-links {
-  display: none;
-  list-style: none;
+    display: none;
+    list-style: none;
 }
 
 .nav-toggle {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
     border: none;
     cursor: pointer;
     padding: var(--space-xs);
@@ -187,7 +191,7 @@ img {
     align-items: center;
     gap: var(--space-md);
     position: fixed;
-    inset: 0;            
+    inset: 0;
     background-color: var(--color-surface);
     justify-content: center;
     z-index: 999;
@@ -205,38 +209,9 @@ img {
     color: var(--color-primary);
 }
 
-@media (min-width: 768px) {
-    .nav-toggle {
-        display: none; 
-    }
-
-    .nav-links {
-        display: flex;          
-        flex-direction: row;
-        gap: var(--space-lg);
-        position: static;       
-        background: none;
-        inset: auto;
-    }
-
-    .nav-links a {
-        font-size: 0.9rem;
-        font-family: var(--font-body);
-        font-weight: 500;
-        color: white;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-    }
-
-    .navbar.scrolled .nav-links a {
-        color: var(--color-text-primary);
-    }
-
-    .nav-links a:hover {
-        color: var(--color-accent);
-    }
-}
-
+/* ================================
+   HERO
+================================ */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -260,7 +235,7 @@ img {
 }
 
 .hero-content {
-    position: relative;     
+    position: relative;
     z-index: 1;
     text-align: center;
     padding: var(--space-sm);
@@ -283,6 +258,9 @@ img {
     margin-bottom: var(--space-xl);
 }
 
+/* ================================
+   O APARTMANU
+================================ */
 .about {
     padding: var(--space-2xl) 0;
     background-color: var(--color-surface);
@@ -299,7 +277,7 @@ img {
 }
 
 .about-text {
-    flex: 1;  
+    flex: 1;
 }
 
 .about-text h2 {
@@ -326,7 +304,7 @@ img {
 }
 
 .about-image {
-    flex: 1;  
+    flex: 1;
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--shadow-lg);
@@ -335,12 +313,12 @@ img {
 .about-image img {
     width: 100%;
     height: 500px;
-    object-fit: cover;  
+    object-fit: cover;
     transition: transform 0.6s ease;
 }
 
 .about-image:hover img {
-    transform: scale(1.03); 
+    transform: scale(1.03);
 }
 
 .about-image figcaption {
@@ -351,6 +329,9 @@ img {
     font-style: italic;
 }
 
+/* ================================
+   POGODNOSTI
+================================ */
 .amenities {
     padding: var(--space-2xl) 0;
     background-color: var(--color-bg);
@@ -365,12 +346,6 @@ img {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-md);
-}
-
-@media (min-width: 768px) {
-    .amenities-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
 }
 
 .amenity-card {
@@ -420,23 +395,13 @@ img {
     text-align: center;
 }
 
-/* GRID — Mobile First: 2 kolone */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 200px; /* Visina jednog reda */
+    grid-auto-rows: 200px;
     gap: var(--space-xs);
 }
 
-/* Desktop: 4 kolone */
-@media (min-width: 768px) {
-    .gallery-grid {
-        grid-template-columns: repeat(4, 1fr);
-        grid-auto-rows: 250px;
-    }
-}
-
-/* Slike koje zauzimaju 2 kolone */
 .gallery-item--wide {
     grid-column: span 2;
 }
@@ -456,4 +421,335 @@ img {
 
 .gallery-item:hover img {
     transform: scale(1.05);
+}
+
+/* ================================
+   KONTAKT
+================================ */
+.contact {
+    padding: var(--space-2xl) 0;
+    background-color: var(--color-bg);
+}
+
+.contact-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-xl);
+}
+
+.contact-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: var(--space-sm);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-text-primary);
+    background-color: var(--color-surface);
+    transition: border-color var(--transition-fast);
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--color-primary);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.map-container {
+    flex: 1;
+    height: 500px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+/* ================================
+   FOOTER
+================================ */
+.footer {
+    background-color: var(--color-text-primary);
+    color: rgba(255, 255, 255, 0.7);
+    padding: var(--space-2xl) 0 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-xl);
+    padding-bottom: var(--space-xl);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-brand p {
+    margin-top: var(--space-sm);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.footer-brand .nav-logo {
+    color: white;
+}
+
+.footer-brand .nav-logo span {
+    color: var(--color-accent);
+}
+
+.footer-contact,
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.footer-contact h4,
+.footer-links h4 {
+    color: white;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    margin-bottom: var(--space-xs);
+}
+
+.footer-contact a,
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color var(--transition-fast);
+}
+
+.footer-contact a:hover,
+.footer-links a:hover {
+    color: var(--color-accent);
+}
+
+.booking-link {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.footer-bottom {
+    padding: var(--space-md) 0;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+/* ================================
+   ANIMACIJE
+================================ */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================================
+   LIGHTBOX
+================================ */
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-overlay.active {
+    display: flex;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+.lightbox-content img {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-lg);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+    opacity: 0.8;
+    transition: opacity var(--transition-fast);
+}
+
+.lightbox-close:hover {
+    opacity: 1;
+}
+
+.lightbox-prev,
+.lightbox-next {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1.5rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-prev { left: var(--space-md); }
+.lightbox-next { right: var(--space-md); }
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.lightbox-counter {
+    position: fixed;
+    bottom: var(--space-md);
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+/* ================================
+   MEDIA QUERIES
+================================ */
+
+/* Tablet i desktop (min-width: 768px) */
+@media (min-width: 768px) {
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        gap: var(--space-lg);
+        position: static;
+        background: none;
+        inset: auto;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+        font-family: var(--font-body);
+        font-weight: 500;
+        color: white;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+    }
+
+    .navbar.scrolled .nav-links a {
+        color: var(--color-text-primary);
+    }
+
+    .nav-links a:hover {
+        color: var(--color-accent);
+    }
+
+    .amenities-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 250px;
+    }
+}
+
+/* Mobilni (max-width: 767px) */
+@media (max-width: 767px) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-image {
+        width: 100%;
+    }
+
+    .about-image img {
+        height: 300px;
+    }
+
+    .contact-wrapper {
+        flex-direction: column;
+    }
+
+    .map-container {
+        height: 300px;
+        width: 100%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: var(--space-lg);
+    }
+
+    .gallery-item--wide {
+        grid-column: span 2;
+    }
+}
+
+/* Korisnici koji preferiraju smanjene animacije */
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }
