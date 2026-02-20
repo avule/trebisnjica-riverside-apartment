@@ -90,11 +90,29 @@ img {
     box-shadow: var(--shadow-md);
 }
 
+.btn-booking {
+    background-color: var(--color-accent);
+    color: white;
+    font-size: 0.85rem;
+    padding: 0.4rem 1rem;
+    border-radius: var(--border-radius-sm);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all var(--transition-base);
+}
+
+.btn-booking:hover {
+    background-color: #b8943d;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
 .section-title {
     font-family: var(--font-heading);
     font-size: clamp(1.8rem, 4vw, 2.8rem);
     color: var(--color-text-primary);
     margin-bottom: var(--space-md);
+    text-align: center;
 }
 
 .section-subtitle {
@@ -102,6 +120,8 @@ img {
     color: var(--color-text-secondary);
     max-width: 55ch;
     margin-bottom: var(--space-xl);
+    text-align: center;
+    margin-inline: auto;
 }
 
 /* ================================
@@ -345,10 +365,15 @@ img {
 .amenities-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
     gap: var(--space-md);
 }
 
 .amenity-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     background-color: var(--color-surface);
     border-radius: var(--border-radius);
     padding: var(--space-lg);
@@ -469,7 +494,7 @@ img {
 
 .contact-wrapper {
     display: flex;
-    align-items: flex-start;
+    align-items: stretch; 
     justify-content: space-between;
     gap: var(--space-xl);
 }
@@ -519,15 +544,12 @@ img {
 
 .map-container {
     flex: 1;
-    height: 500px;
+    min-height: 500px; 
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--shadow-md);
 }
 
-/* ================================
-   FOOTER
-================================ */
 .footer {
     background-color: var(--color-text-primary);
     color: rgba(255, 255, 255, 0.7);
@@ -585,8 +607,14 @@ img {
 }
 
 .booking-link {
-    opacity: 0.4;
-    pointer-events: none;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color var(--transition-fast);
+}
+
+.booking-link:hover {
+    color: var(--color-accent);
 }
 
 .footer-bottom {
@@ -738,6 +766,23 @@ img {
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: 260px;
     }
+
+    .btn-booking {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.75rem;
+    }
+
+    .nav-links {
+    gap: var(--space-md); /* Manji razmak između linkova */
+    }
+
+    .nav-logo {
+    font-size: 1.1rem;
+    }
+
+    .amenities-grid {
+    grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* Mobilni (max-width: 767px) */
@@ -780,9 +825,60 @@ img {
         grid-column: span 2;
     }
 
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 160px;
+        gap: 4px;
+    }
+
     .gallery-item {
-        width: calc(50% - 6px); /* 2 po redu na mobilnom */
-        height: 220px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .amenities-grid {
+        align-items: stretch;
+    }
+
+    .amenity-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1023px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-image {
+        width: 100%;
+        max-width: 500px;      
+        margin-inline: auto;  
+    }
+
+    .about-image img {
+        height: 300px;
+    }
+
+    .contact-wrapper {
+        flex-direction: column;
+    }
+
+    .map-container {
+        display: none;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .amenities-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
