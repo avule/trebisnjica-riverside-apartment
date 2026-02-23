@@ -129,3 +129,11 @@ tabs.forEach(tab => {
     });
   });
 });
+
+const today = new Date().toISOString().split('T')[0];
+document.getElementById('checkin').min = today;
+document.getElementById('checkout').min = today;
+
+document.getElementById('checkin').addEventListener('change', (e) => {
+  document.getElementById('checkout').min = e.target.value;
+});
