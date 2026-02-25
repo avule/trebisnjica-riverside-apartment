@@ -56,9 +56,6 @@ img {
     height: auto;
 }
 
-/* ================================
-   UTILITY
-================================ */
 .container {
     width: 100%;
     max-width: var(--container-max);
@@ -125,9 +122,6 @@ img {
     margin-inline: auto;
 }
 
-/* ================================
-   NAVBAR
-================================ */
 .navbar {
     position: fixed;
     top: 0;
@@ -230,9 +224,22 @@ img {
     color: var(--color-primary);
 }
 
-/* ================================
-   HERO
-================================ */
+.nav-close {
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    color: var(--color-text-primary);
+    cursor: pointer;
+    line-height: 1;
+    opacity: 0.7;
+    transition: opacity var(--transition-fast);
+    margin-top: var(--space-xl);
+}
+
+.nav-close:hover {
+    opacity: 1;
+}
+
 .hero {
     min-height: 100vh;
     display: flex;
@@ -279,9 +286,6 @@ img {
     margin-bottom: var(--space-xl);
 }
 
-/* ================================
-   O APARTMANU
-================================ */
 .about {
     padding: var(--space-2xl) 0;
     background-color: var(--color-surface);
@@ -350,9 +354,6 @@ img {
     font-style: italic;
 }
 
-/* ================================
-   POGODNOSTI
-================================ */
 .amenities {
     padding: var(--space-2xl) 0;
     background-color: var(--color-bg);
@@ -420,9 +421,6 @@ img {
     line-height: 1.5;
 }
 
-/* ================================
-   GALERIJA
-================================ */
 .gallery {
     padding: var(--space-2xl) 0;
     background-color: var(--color-surface);
@@ -493,9 +491,6 @@ img {
     display: none;
 }
 
-/* ================================
-   KONTAKT
-================================ */
 .contact {
     padding: var(--space-2xl) 0;
     background-color: var(--color-bg);
@@ -563,9 +558,6 @@ input[type="date"] {
     box-shadow: var(--shadow-md);
 }
 
-/* ================================
-   FOOTER
-================================ */
 .footer {
     background-color: var(--color-text-primary);
     color: rgba(255, 255, 255, 0.7);
@@ -639,9 +631,6 @@ input[type="date"] {
     font-size: 0.85rem;
 }
 
-/* ================================
-   ANIMACIJE
-================================ */
 .reveal {
     opacity: 0;
     transform: translateY(40px);
@@ -653,9 +642,6 @@ input[type="date"] {
     transform: translateY(0);
 }
 
-/* ================================
-   LIGHTBOX
-================================ */
 .lightbox-overlay {
     display: none;
     position: fixed;
@@ -738,11 +724,6 @@ input[type="date"] {
     font-size: 0.9rem;
 }
 
-/* ================================
-   MEDIA QUERIES
-================================ */
-
-/* Tablet (768px+) */
 @media (min-width: 768px) {
     .nav-toggle {
         display: none;
@@ -791,16 +772,18 @@ input[type="date"] {
         grid-template-columns: repeat(4, 1fr);
         grid-auto-rows: 260px;
     }
+
+    .nav-close {
+        display: none;
+    }
 }
 
-/* Desktop (1024px+) */
 @media (min-width: 1024px) {
     .amenities-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-/* Tablet i manji (max 1023px) */
 @media (max-width: 1023px) {
     .about-content {
         flex-direction: column;
@@ -830,7 +813,6 @@ input[type="date"] {
     }
 }
 
-/* Mobilni (max 767px) */
 @media (max-width: 767px) {
     .container {
         padding-inline: var(--space-sm);
@@ -882,7 +864,6 @@ input[type="date"] {
     }
 }
 
-/* Korisnici koji preferiraju smanjene animacije */
 @media (prefers-reduced-motion: reduce) {
     .reveal {
         opacity: 1;

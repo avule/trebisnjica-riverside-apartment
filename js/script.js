@@ -1,16 +1,9 @@
-// ================================
-// AUTOMATSKI DODAJ REVEAL KLASE
-// ================================
 document.querySelectorAll('.amenity-card, .gallery-item, .about-content, .contact-wrapper')
   .forEach(el => el.classList.add('reveal'));
 
-// ================================
-// NAVBAR: Scroll efekat + Mobilni meni
-// ================================
 const navbar = document.getElementById('navbar');
 const navToggle = document.querySelector('.nav-toggle');
 
-// Mijenja izgled navbara kada korisnik skroluje
 window.addEventListener('scroll', () => {
   if (window.scrollY > 50) {
     navbar.classList.add('scrolled');
@@ -19,37 +12,29 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Otvara/zatvara mobilni meni
 navToggle.addEventListener('click', () => {
   document.body.classList.toggle('nav-open');
 });
 
-// Zatvara meni kada klikneš na link
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', () => {
     document.body.classList.remove('nav-open');
   });
 });
 
-// ================================
-// SCROLL REVEAL ANIMACIJA
-// ================================
 const revealElements = document.querySelectorAll('.reveal');
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
-      observer.unobserve(entry.target); // Animira samo jednom
+      observer.unobserve(entry.target);
     }
   });
 }, { threshold: 0.15 });
 
 revealElements.forEach(el => observer.observe(el));
 
-// ================================
-// LIGHTBOX
-// ================================
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightboxImg');
 const lightboxClose = document.getElementById('lightboxClose');
@@ -57,7 +42,6 @@ const lightboxPrev = document.getElementById('lightboxPrev');
 const lightboxNext = document.getElementById('lightboxNext');
 const lightboxCounter = document.getElementById('lightboxCounter');
 
-// Prikupi sve galerijske slike
 const galleryImages = [...document.querySelectorAll('.gallery-item img')];
 let currentIndex = 0;
 
@@ -68,7 +52,7 @@ function openLightbox(index) {
   lightboxImg.alt = img.alt;
   lightboxCounter.textContent = `${index + 1} / ${galleryImages.length}`;
   lightbox.classList.add('active');
-  document.body.style.overflow = 'hidden'; // Blokira scroll ispod
+  document.body.style.overflow = 'hidden';
 }
 
 function closeLightbox() {
@@ -81,23 +65,20 @@ function navigate(direction) {
   openLightbox(currentIndex);
 }
 
-// Klik na sliku otvara lightbox
 galleryImages.forEach((img, index) => {
   img.style.cursor = 'pointer';
   img.addEventListener('click', () => openLightbox(index));
 });
 
-// Zatvaranje
 lightboxClose.addEventListener('click', closeLightbox);
 lightbox.addEventListener('click', (e) => {
   if (e.target === lightbox) closeLightbox();
 });
 
-// Navigacija
+
 lightboxPrev.addEventListener('click', () => navigate(-1));
 lightboxNext.addEventListener('click', () => navigate(1));
 
-// Navigacija tipkovnicom
 document.addEventListener('keydown', (e) => {
   if (!lightbox.classList.contains('active')) return;
   if (e.key === 'ArrowLeft') navigate(-1);
@@ -105,17 +86,12 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeLightbox();
 });
 
-// ================================
-// GALERIJA TABOVI
-// ================================
 const tabs = document.querySelectorAll('.gallery-tab');
 const galleryItems = document.querySelectorAll('.gallery-item');
 
 tabs.forEach(tab => {
   tab.addEventListener('click', () => {
-    // Ukloni active sa svih tabova
     tabs.forEach(t => t.classList.remove('active'));
-    // Dodaj active na kliknuti tab
     tab.classList.add('active');
 
     const filter = tab.dataset.filter;
@@ -136,4 +112,8 @@ document.getElementById('checkout').min = today;
 
 document.getElementById('checkin').addEventListener('change', (e) => {
   document.getElementById('checkout').min = e.target.value;
+});
+
+document.querySelector('.nav-close').addEventListener('click', () => {
+  document.body.classList.remove('nav-open');
 });
