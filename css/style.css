@@ -732,7 +732,7 @@ input[type="date"] {
     .nav-links {
         display: flex;
         flex-direction: row;
-        gap: var(--space-md);
+        gap: var(--space-sm);
         position: static;
         background: none;
         inset: auto;
@@ -775,6 +775,10 @@ input[type="date"] {
 
     .nav-close {
         display: none;
+    }
+
+    .nav-container {
+        padding-inline: var(--space-md);
     }
 }
 
